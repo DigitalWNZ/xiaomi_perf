@@ -9,8 +9,8 @@ view: uv_pdt {
       and _TABLE_SUFFIX BETWEEN replace(safe_cast(date({%date_start date_filter %}) as string),'-','') AND replace(safe_cast(date({%date_end date_filter %}) as string),'-','')
       group by 1,2
  ;;
-increment_key: "event_date_date"
-increment_offset: 3
+# increment_key: "event_date_date"
+# increment_offset: 3
   }
 
   filter: date_filter {

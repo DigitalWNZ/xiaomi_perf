@@ -8,8 +8,7 @@ include: "/views/**/*.view"
 # use the Quick Help panel on the right to see documentation.
 
 datagroup: xiaomi_v2_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  sql_trigger: SELECT current_date();;
 }
 
 persist_with: xiaomi_v2_default_datagroup
@@ -25,6 +24,7 @@ persist_with: xiaomi_v2_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
+explore: incremental_pdt {}
 explore: ping {}
 explore: uv_pdt {
   extends: [udf_lib]
